@@ -4,7 +4,7 @@ import { Request } from 'express';
 interface AuditLogData {
   userId?: number;
   userEmail?: string;
-  aaction: 'CREATE' | 'UPDATE' | 'DELETE' | 'LOGIN';
+  action: 'CREATE' | 'UPDATE' | 'DELETE' | 'LOGIN';
   tableName: string;
   recordId?: number;
   oldData?: any;

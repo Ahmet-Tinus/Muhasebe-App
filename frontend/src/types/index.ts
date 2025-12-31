@@ -61,7 +61,7 @@ export interface AuditLog {
   user_id: number;
   user_email: string;
   user_name?: string;
-  action: 'CREATE' | 'UPDATE' | 'DELETE';
+  action: 'CREATE' | 'UPDATE' | 'DELETE' | 'LOGIN';
   table_name: string;
   record_id?: number;
 old_data?: Record<string, unknown>;
