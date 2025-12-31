@@ -1,0 +1,29 @@
+import { pool } from './database';
+
+export const runMigrations = async () => {
+  try {
+    // gelir_tipi kolonunu ekle
+    await pool.query(`
+      ALTER TABLE islemler 
+      ADD COLUMN IF NOT EXISTS gelir_tipi VARCHAR(10) CHECK(gelir_tipi IN ('normal', 'pos')) DEFAULT 'normal'
+    `);
+
+    // kasa_yansima_tarihi kolonunu ekle
+    await pool.query(`
+      ALTER TABLE islemler 
+      ADD COLUMN IF NOT EXISTS kasa_yansima_tarihi DATE
+    `);
+
+    // Mevcut kayıtlar için varsayılan değerleri ayarla
+    await pool.query(`
+      UPDATE islemler 
+      SET gelir_tipi = 'normal', 
+          kasa_yansima_tarihi = tarih 
+      WHERE gelir_tipi IS NULL
+    `);
+
+    console.log('✅ Migration tamamlandı');
+  } catch (error) {
+    console.error('❌ Migration hatası:', error);
+  }
+};

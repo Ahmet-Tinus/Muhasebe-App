@@ -1,0 +1,20 @@
+Tabii! Çok basit:
+Siteyi Çalıştırma
+1. VS Code'u Aç
+
+muhasebe-deneme klasörünü aç
+
+2. İki Terminal Aç
+Terminal 1 - Backend:
+bashcd backend
+npm run dev
+Terminal 2 - Frontend:
+bashcd frontend
+npm run dev
+```
+
+**3. Tarayıcıda Aç:**
+```
+http://localhost:5173
+
+İki terminal da çalışınca uygulama hazır! 🚀
