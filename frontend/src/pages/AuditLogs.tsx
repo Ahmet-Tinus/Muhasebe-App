@@ -71,18 +71,17 @@ function AuditLogs() {
             </div>
           </div>
 
-          {/* Filtreler */}
+{/* Filtreler */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <select
-              value={filterAction}
-              onChange={(e) => setFilterAction(e.target.value)}
+              value={filterTable}
+              onChange={(e) => setFilterTable(e.target.value)}
               className="px-4 py-2.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white font-medium"
             >
-              <option value="all">🎯 Tüm İşlemler</option>
-              <option value="CREATE">✅ Ekleme</option>
-              <option value="UPDATE">✏️ Güncelleme</option>
-              <option value="DELETE">🗑️ Silme</option>
-              <option value="LOGIN">🔐 Giriş</option>
+              <option value="all">📊 Tüm Tablolar</option>
+              <option value="islemler">💰 İşlemler</option>
+              <option value="kategoriler">📁 Kategoriler</option>
+              <option value="users">👥 Kullanıcılar</option>
             </select>
 
             <select
@@ -94,6 +93,7 @@ function AuditLogs() {
               <option value="CREATE">✅ Ekleme</option>
               <option value="UPDATE">✏️ Güncelleme</option>
               <option value="DELETE">🗑️ Silme</option>
+              <option value="LOGIN">🔐 Giriş</option>
             </select>
           </div>
 
