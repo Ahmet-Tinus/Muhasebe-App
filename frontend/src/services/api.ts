@@ -1,9 +1,7 @@
 import axios from 'axios';
 import type { Islem, Kasa, Varlik, Kategori, AylikOzet, KategoriDagilim, BekleyenPos, AuditLog } from '../types';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL 
-  ? `${import.meta.env.VITE_API_URL}/api`
-  : 'http://localhost:5001/api';
+const API_BASE_URL = 'https://muhasebe-app-o6sn.onrender.com/api';
 
 export const api = axios.create({
   baseURL: API_BASE_URL,
